@@ -91,7 +91,46 @@ df['thread_id'] = utils.assign_reddit_threads(df)
 print(df)
 ```
 
-### 3. **Plotting ECDF for Deliberation Intensity**
+### 3. ** Providing Custom Column Names **
+If your dataset uses different column names, you can provide custom names when initializing the `DeliberationIntensity` class. For example, if your dataset has columns like `message_id` instead of `id`, and `user` instead of author, you can provide these custom names when creating the instance.
+
+```python
+import pandas as pd
+from deliberation_intensity import DeliberationIntensity
+
+# Example data with custom column names
+data = {
+    'message_id': ['1', '2', '3', '4'],
+    'parent_message_id': [None, 't3_1', 't1_2', 't1_2'],
+    'discussion_id': ['1', '1', '1', '1'],
+    'content': ['This is a post', 'This is a comment', 'Another comment', 'Yet another comment'],
+    'is_argument': [1, 1, 0, 1],
+    'user': ['user1', 'user2', 'user3', 'user2']
+}
+
+df = pd.DataFrame(data)
+
+# Initialize the deliberation intensity class with custom column mappings
+deliberation = DeliberationIntensity(
+    group='discussion_id',  # Custom group identifier
+    text='content',         # Custom text column
+    author='user',          # Custom author column
+    argument='is_argument', # Custom argument flag column
+    id='message_id',        # Custom id column
+    speech='content',       # Custom speech column for sentence counting
+    verbose=True
+)
+
+# Calculate deliberation intensity
+dis_df = deliberation.calculate_deliberation_intensity(df)
+
+# View the result
+print(dis_df)
+```
+
+
+
+### 4. **Plotting ECDF for Deliberation Intensity**
 
 The package includes functionality to plot empirical cumulative distribution functions (ECDFs) for comparing deliberation intensity across different datasets.
 
