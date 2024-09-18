@@ -96,7 +96,7 @@ If your dataset uses different column names, you can provide custom names when i
 
 ```python
 import pandas as pd
-from deliberation_intensity import DeliberationIntensity
+from delibtools import DeliberationIntensity
 
 # Example data with custom column names
 data = {
