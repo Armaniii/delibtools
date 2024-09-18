@@ -91,7 +91,11 @@ df['thread_id'] = utils.assign_reddit_threads(df)
 print(df)
 ```
 
+<<<<<<< HEAD
 ### 3. **Providing Custom Column Names**
+=======
+### 3. ** Providing Custom Column Names **
+>>>>>>> master
 If your dataset uses different column names, you can provide custom names when initializing the `DeliberationIntensity` class. For example, if your dataset has columns like `message_id` instead of `id`, and `user` instead of author, you can provide these custom names when creating the instance.
 
 ```python
@@ -154,4 +158,8 @@ deliberation.plot_ecdf(df1, df2, labels=['Dataset 1', 'Dataset 2'])
 
 ## License
 
+<<<<<<< HEAD
 This project is licensed under the terms of the **Apache License 2.0**. See the [LICENSE](LICENSE) file for more details.
+=======
+This project is licensed under the terms of the **Apache License 2.0**. See the [LICENSE](LICENSE) file for more details.
+>>>>>>> master
