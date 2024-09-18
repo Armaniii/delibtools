@@ -91,7 +91,7 @@ df['thread_id'] = utils.assign_reddit_threads(df)
 print(df)
 ```
 
-### 3. ** Providing Custom Column Names **
+### 3. **Providing Custom Column Names**
 If your dataset uses different column names, you can provide custom names when initializing the `DeliberationIntensity` class. For example, if your dataset has columns like `message_id` instead of `id`, and `user` instead of author, you can provide these custom names when creating the instance.
 
 ```python
